@@ -11,7 +11,8 @@ mkdir -p /etc/dnsmasq.d /etc/tor /etc/nginx/sites-available /etc/nginx/ssl /etc/
 # Install Pi-hole if not already installed
 if ! command -v pihole &> /dev/null; then
     echo "[+] Installing Pi-hole..."
-    sudo curl -sSL https://install.pi-hole.net | bash
+#    sudo curl -sSL https://install.pi-hole.net | bash
+    curl -sSL https://install.pi-hole.net | sudo PIHOLE_SKIP_OS_CHECK=true bash
 fi
 
 # Configure Unbound
